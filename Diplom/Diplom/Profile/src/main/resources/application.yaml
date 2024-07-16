@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Profile
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/profiles
+    username: user
+    password: 123
+    driverClassName: org.postgresql.Driver
+  second-datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5431/messages
+    username: user
+    password: 123
+    driverClassName: org.postgresql.Driver
+
+
+security.enable-csrf: false
+
+logging:
+  level:
+    org.springframework.security.web: INFO
+

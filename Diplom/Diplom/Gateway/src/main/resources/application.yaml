@@ -1,0 +1,22 @@
+server:
+  port: 8765
+
+
+spring:
+  application:
+    name: Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Profile
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/profile/**
+        - id: Server
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/server/**
+        - id: Profile1
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/profile1/**
